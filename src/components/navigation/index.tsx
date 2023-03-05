@@ -3,11 +3,11 @@ import { useState } from "react";
 import { CloseMenuButton } from "./close-menu-button";
 import { OpenMenuButton } from "./open-menu-button";
 
-export const AuthenticatedHeader = () => {
+export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div>
+    <nav>
       <div className="flex justify-between">
         <OpenMenuButton onClick={() => setIsMenuOpen(true)} />
         <Link href="/" className="underline">
@@ -33,6 +33,6 @@ export const AuthenticatedHeader = () => {
           </div>
         </div>
       )}
-    </div>
+    </nav>
   );
 };

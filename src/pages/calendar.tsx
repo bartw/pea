@@ -1,5 +1,5 @@
-import { CalendarIcon, PlusIcon } from '@heroicons/react/24/solid'
-import { Header } from "@/components/header";
+import { CalendarIcon, PlusIcon } from "@heroicons/react/24/solid";
+import { AuthenticatedPage } from "@/components/authenticated-page";
 
 const items = [
   { name: "On-ice practice", date: "2023-03-05", from: "17:30", to: "18:30" },
@@ -17,32 +17,31 @@ const items = [
 ];
 
 const Calendar = () => (
-  <div className="bg-slate-900 h-screen text-slate-100 flex flex-col">
-    <Header isAuthenticated />
-    <main className="flex-1 mt-2 mb-4 overflow-scroll">
-      <div className="p-4 text-slate-900 bg-emerald-300 uppercase">
-        <h1 className="font-semibold text-xl">Calendar</h1>
-      </div>
-      <ul>
+  <AuthenticatedPage title="Calendar">
+    <ul>
       <li className="border-b-2 px-4 py-2 flex">
-          <PlusIcon className="h-12 w-12" />
+        <PlusIcon className="h-12 w-12" />
+        <div className="ml-4">
+          <div className="text-lg">Add event</div>
+        </div>
+      </li>
+      {items.map(({ name, date, from, to }) => (
+        <li
+          key={`${name}${date}${from}${to}`}
+          className="border-b-2 px-4 py-2 flex"
+        >
+          <CalendarIcon className="h-12 w-12" />
           <div className="ml-4">
-            <div className="text-lg">Add event</div>
+            <div>{date}</div>
+            <div className="text-sm">
+              {from} - {to}
+            </div>
+            <div className="text-lg">{name}</div>
           </div>
         </li>
-        {items.map(({ name, date, from, to }) => (
-          <li key={`${name}${date}${from}${to}`} className="border-b-2 px-4 py-2 flex">
-            <CalendarIcon className="h-12 w-12" />
-            <div className="ml-4">
-                <div>{date}</div>
-                <div className="text-sm">{from} - {to}</div>
-                <div className="text-lg">{name}</div>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </main>
-  </div>
+      ))}
+    </ul>
+  </AuthenticatedPage>
 );
 
 export default Calendar;
