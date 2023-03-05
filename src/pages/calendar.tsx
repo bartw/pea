@@ -1,4 +1,4 @@
-import { CalendarIcon } from '@heroicons/react/24/solid'
+import { CalendarIcon, PlusIcon } from '@heroicons/react/24/solid'
 import { Header } from "@/components/header";
 
 const items = [
@@ -24,6 +24,12 @@ const Calendar = () => (
         <h1 className="font-semibold text-xl">Calendar</h1>
       </div>
       <ul>
+      <li className="border-b-2 px-4 py-2 flex">
+          <PlusIcon className="h-12 w-12" />
+          <div className="ml-4">
+            <div className="text-lg">Add event</div>
+          </div>
+        </li>
         {items.map(({ name, date, from, to }) => (
           <li key={`${name}${date}${from}${to}`} className="border-b-2 px-4 py-2 flex">
             <CalendarIcon className="h-12 w-12" />
