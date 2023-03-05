@@ -5,7 +5,7 @@ const Home = () => {
   const router = useRouter();
   return (
     <div className="bg-slate-900 h-screen text-slate-100 flex flex-col">
-      <Header isAuthenticated={false} />
+      <Header />
       <main className="px-4 py-2 flex-1 flex flex-col justify-center">
         <form
           onSubmit={(e) => {
