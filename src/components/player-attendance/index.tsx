@@ -1,9 +1,9 @@
 import { CheckIcon, UserIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 
 type Attendance = "INITIAL" | "PRESENT" | "ABSENT";
 
-export const Player = ({ name }: { name: string }) => {
+export const PlayerAttendance = ({ name }: { name: string }) => {
   const [attendance, setAttendance] = useState<Attendance>("INITIAL");
 
   return (

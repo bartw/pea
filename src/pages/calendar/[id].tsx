@@ -1,6 +1,6 @@
 import { AuthenticatedPage } from "@/components/authenticated-page";
+import { PlayerAttendance } from "@/components/player-attendance";
 import { CalendarIcon } from "@heroicons/react/24/solid";
-import { Player } from "./player";
 
 const event = {
   id: "123456781",
@@ -38,7 +38,7 @@ const Event = () => (
       <ul>
         {players.map(({ name }) => (
           <li key={`${name}`} className="border-b-2 px-4 py-2">
-            <Player name={name} />
+            <PlayerAttendance name={name} />
           </li>
         ))}
       </ul>
