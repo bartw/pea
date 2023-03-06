@@ -1,7 +1,7 @@
 import { UserIcon, UserPlusIcon } from "@heroicons/react/24/solid";
 import { AuthenticatedPage } from "@/components/authenticated-page";
 
-const items = [
+const players = [
   { name: "Jan" },
   { name: "Piet" },
   { name: "Joris" },
@@ -23,7 +23,7 @@ const Players = () => (
           <div className="text-lg">Add player</div>
         </div>
       </li>
-      {items.map(({ name }) => (
+      {players.map(({ name }) => (
         <li key={`${name}`} className="border-b-2 px-4 py-2 flex">
           <UserIcon className="h-12 w-12" />
           <div className="ml-4">
