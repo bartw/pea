@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { SignOutButton } from "../sign-out-button";
 import { ActiveNavItem } from "./active-nav-item";
 import { CloseMenuButton } from "./close-menu-button";
 import { NavItem } from "./nav-item";
@@ -26,9 +26,7 @@ export const Navigation = () => {
         ) : (
           <OpenMenuButton onClick={openMenu} />
         )}
-        <Link href="/" className="underline">
-          Sign out
-        </Link>
+        <SignOutButton />
       </div>
       {isMenuOpen && (
         <ul className="mt-8">
