@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { ReactNode, useEffect } from "react";
 import { Header } from "../header";
 import { Navigation } from "../navigation";
+import { Page } from "../page";
 
 type Props = {
   title: string;
@@ -20,7 +21,7 @@ export const AuthenticatedPage = ({ title, children }: Props) => {
   }, [isAuthenticated, router]);
 
   return (
-    <div className="bg-slate-900 h-screen text-slate-100 flex flex-col">
+    <Page>
       <Header>
         <Navigation />
       </Header>
@@ -30,6 +31,6 @@ export const AuthenticatedPage = ({ title, children }: Props) => {
         </div>
         {children}
       </main>
-    </div>
+    </Page>
   );
 };
